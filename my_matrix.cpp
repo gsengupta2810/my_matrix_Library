@@ -492,34 +492,3 @@ namespace matrix
 			return true;
 	}
 }
-
-//#######################################################################################
-//  							Main for testing 
-// ######################################################################################
-using namespace matrix;
-
-int main()
-{
-	cout<<"Working with main "<<endl;
-	Matrix<int> a(3,3);
-	Matrix<int> b(3,3);
-	for (int i = 0; i < 3; ++i)
-	{
-		for (int j = 0; j < 3; ++j)
-		{
-			a.set(i,j,(2*i+1)*(3*j+1));
-		}
-	}
-	for (int i = 0; i < 3; ++i)
-	{
-		for (int j = 0; j < 3; ++j)
-		{
-			if(i>j) b.set(i,j,0);
-			else b.set(i,j,(2*i+1)*(j+1)*2);
-		}
-	}
-	if(a==b)
-		cout<<"1"<<endl;
-	else if(a==a)
-		cout<<"2"<<endl;
-}
